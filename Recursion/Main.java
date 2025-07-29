@@ -128,41 +128,4 @@ public class Main {
         return 1 + countDigits(n / 10);
     }
 
-    public static void printNQueens(boolean[][] board) {
-
-    }
-
-    // public static void printNQueensHelper(boolean[][] board, int r) {
-
-    // if (r == board.length) {
-    // return;
-    // }
-    // for (int c = 0; c < board[0].length; c++) {
-    // if (isSafe(board, r, c)) {
-    // board[r][c] = true;
-    // printNQueensHelper(board, r + 1);
-    // board[r][c] = false;
-    // }
-
-    // }
-    // }
-
-    // private static boolean isSafe(boolean[][] board, int r, int c) {
-    // // upside checking
-    // int cr = r;
-    // while (cr >= 0) {
-    // if (board[cr][c]) {
-    // return false;
-    // }
-    // cr--;
-    // }
-    // int cr = r;
-    // int
-    // while (cr >= 0) {
-    // if (board[cr][c]) {
-    // return false;
-    // }
-    // cr--;
-    // }
-    // }
 }

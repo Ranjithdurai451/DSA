@@ -13,14 +13,14 @@ public class Main {
     // System.out.println(Arrays.toString(firstAndLastIndex(new int[] { 1, 2, 3, 3,
     // 3, 4 }, 4)));
     // System.out.println(binarySearch(new int[] {}, 4));
-  
+
   }
 
   public static int binarySearch(int arr[], int target) {
     int low = 0;
     int high = arr.length - 1;
     int mid;
-    while (low >= high) {
+    while (low <= high) {
       // mid=(low+high)/2; Normal way to find mid value
       // Consider if we get an array with larger size which can't be hold in int type,
       // then we either convert it into int type or we use approach which equivalent
@@ -133,7 +133,7 @@ public class Main {
         high = mid - 1;
       }
     }
-     return ceil;
+    return ceil;
   }
 
   public static int[] firstAndLastIndex(int arr[], int target) {

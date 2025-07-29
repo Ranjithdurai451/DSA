@@ -1,5 +1,4 @@
-import java.util.ArrayList;
-
+import java.util.*;
 public class SubsequenceOfString {
     public static void main(String[] args) {
         // System.out.println(subsequenceCountReturnHelper("", "abc"));
@@ -64,6 +63,7 @@ public class SubsequenceOfString {
         subsequenceArrayReturnHelper(processed + unprocessed.charAt(0), unprocessed.substring(1), result);
         // Leave one
         subsequenceArrayReturnHelper(processed, unprocessed.substring(1), result);
+    
     }
 
     // function to return number of subsequences

@@ -5,7 +5,7 @@ public class Main {
     System.out.println();
   }
 
-  public static int length(int n) {
+  static int length(int n) {
     // if (n == 0) return 0;
     // return 1 + length(n / 10);
 
