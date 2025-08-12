@@ -19,12 +19,12 @@ public class DoublyLinkedList {
   private Node head;
   private Node tail;
 
-  public void add(int data) {
+  public void add(int val) {
     if (head == null) {
-      head = new Node(data);
+      head = new Node(val);
       tail = head;
     } else {
-      Node newNode = new Node(data, tail, null);
+      Node newNode = new Node(val, tail, null);
       tail.next = newNode;
       tail = newNode;
     }
@@ -36,6 +36,27 @@ public class DoublyLinkedList {
     }
   }
 
+  public void insertFirst(int val) {
+    Node current = head;
+    Node newNode = new Node(val);
+    current.prev = newNode;
+    newNode.next = current;
+    head = newNode;
+  }
+
+  public void insert(int index, int val) {
+    if (index < 0 || index >= size()) {
+      System.out.println("Invalid Index");
+      return;
+    }
+    Node newNode = new Node(val);
+    if (index == 0) {
+      insertFirst(val);
+      return;
+    }
+    Node current = head;
+  }
+
   public void show() {
     Node current = head;
     while (current != null) {
@@ -44,6 +65,7 @@ public class DoublyLinkedList {
         System.out.print("-> ");
       current = current.next;
     }
+
   }
 
   public int size() {
