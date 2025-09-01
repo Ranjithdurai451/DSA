@@ -1,35 +1,38 @@
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class TwoSum {
+
     /**
-     * Finds two numbers in a sorted array that add up to a target value using the Two Pointer approach.
-     * Time Complexity: O(n log n) due to sorting, O(n) for the two-pointer search.
-     * Space Complexity: O(1) - constant extra space.
-     * @param arr The input array of integers.
-     * @param k The target sum.
-     * @return An array containing the two numbers that add up to k, or {-1, -1} if no such pair exists.
+     * Finds two numbers in an array that add up to a target value.
+     * Uses a HashMap to store each number and its index, allowing for O(1) lookup.
+     * Time Complexity: O(n) - iterates through the array once.
+     * Space Complexity: O(n) - stores each number and its index in a HashMap.
+     * @param nums The input array of integers.
+     * @param target The target sum.
+     * @return An array containing the indices of the two numbers that add up to the target, or {-1, -1} if no such pair exists.
      */
-    public static int[] twoSum(int arr[], int k) {
-        Arrays.sort(arr); // Sort the array to use the two-pointer approach
-        int left = 0;
-        int right = arr.length - 1;
-        while (left < right) { // Iterate until the two pointers meet
-            int sum = arr[left] + arr[right];
-            if (sum == k)
-                return new int[] { arr[left], arr[right] }; // Return the pair if the sum equals the target
-            else if (sum > k) {
-                right--; // Decrement the right pointer if the sum is greater than the target
-            } else {
-                left++; // Increment the left pointer if the sum is less than the target
+    public static int[] twoSum(int[] nums, int target) {
+        Map<Integer, Integer> map = new HashMap<>();
+
+        for (int i = 0; i < nums.length; i++) {
+            int complement = target - nums[i];
+
+            // Check if the complement exists in the map
+            if (map.containsKey(complement)) {
+                return new int[] { map.get(complement), i };
             }
+
+            map.put(nums[i], i); // Store the number and its index in the map
         }
-      return new int[]{-1,-1}; // Return {-1, -1} if no such pair is found
+        return new int[] { -1, -1 }; // Return default if no solution is found
     }
 
     public static void main(String[] args) {
-        int[] arr = {2, 7, 11, 15};
+        int[] nums = {2, 7, 11, 15};
         int target = 9;
-        int[] result = twoSum(arr, target);
+        int[] result = twoSum(nums, target);
         System.out.println(Arrays.toString(result));
     }
 }
