@@ -1,6 +1,7 @@
 import java.util.*;
 
 public class BinaryToDecimal {
+
     /**
      * Converts a binary number represented as a string to its decimal equivalent.
      * The algorithm iterates through the binary string from right to left,
@@ -15,9 +16,9 @@ public class BinaryToDecimal {
         int index = 0;
         // Iterate through the binary string from right to left
         for (int i = n.length() - 1; i >= 0; i--) {
-            index = (n.length() - 1)-i;
-            // Calculate the decimal value by adding the power of 2 if the bit is '1'
-            result += (n.charAt(i)-'0') * Math.pow(2, index);
+            index = (n.length() - 1) - i;
+            // Calculate the decimal value by adding the power of 2 if the bit is '1' using left bit shift
+            result += (n.charAt(i) - '0') << index;
         }
         return result;
     }
