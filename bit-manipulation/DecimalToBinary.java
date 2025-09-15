@@ -14,8 +14,10 @@ public class DecimalToBinary {
         if (n==0) return "0"; // Handle the base case of zero.
         StringBuilder result=new StringBuilder();
         while(n>0){
-            result.append(n%2); // Append the remainder (0 or 1) to the result.
-            n/=2; // Integer division by 2 to get the next quotient.
+            // result.append(n%2); // Append the remainder (0 or 1) to the result.
+            // n/=2; // Integer division by 2 to get the next quotient.
+            result.append(n&1);
+            n=1;
         }
         return result.reverse().toString(); // Reverse the string to get the correct binary representation.
     }
