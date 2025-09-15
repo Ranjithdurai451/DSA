@@ -22,23 +22,19 @@ class TwoSum {
      * @return An array containing the indices of the two numbers that add up to the target, or {-1, -1} if no such pair exists.
      */
     public static int[] twoSum(int[] nums, int target) {
-        // Use a hash map to store each number and its index for quick lookup
         Map<Integer, Integer> map = new HashMap<>();
 
         for (int i = 0; i < nums.length; i++) {
-            // Calculate the complement needed to reach the target
             int complement = target - nums[i];
 
-            // Check if the complement exists in the map
+            // If the complement exists in the map, return the indices of the two numbers.
             if (map.containsKey(complement)) {
-                // If the complement exists, return the indices of the two numbers
                 return new int[] { map.get(complement), i };
             }
 
-            // Store the current number and its index in the map
             map.put(nums[i], i);
         }
-        // If no such pair exists, return {-1, -1}
+        // If no such pair exists, return {-1, -1}.
         return new int[] { -1, -1 };
     }
 }
