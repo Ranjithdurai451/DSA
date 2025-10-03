@@ -10,6 +10,7 @@ public class BuyAndSellStock {
      * @return The maximum profit that can be obtained.
      */
     public static int buyAndSellStock(int arr[]) {
+        int num=0;
         int min = Integer.MAX_VALUE; // Initialize min to maximum possible value to find the lowest price
         int currentProfit;
         int profit = 0;
