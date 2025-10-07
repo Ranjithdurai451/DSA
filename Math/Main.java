@@ -1,33 +1,21 @@
+import java.util.*;
+import java.lang.*;
+
 public class Main {
-  public static void main(String[] args) {
-    System.out.println(length(4457));
-    System.out.println(reverse(4457));
-    System.out.println();
-  }
-
-  static int length(int n) {
-    // if (n == 0) return 0;
-    // return 1 + length(n / 10);
-
-    // Without Recursion
-    int count = 0;
-    while (n > 0) {
-      count++;
-      n /= 10;
+    public static void main(String[] args) {
+        System.out.println(reverseANumber(123));
     }
-    return count;
-  }
 
-  public static int reverse(int n) {
-    // if (n < 9) return n;
-    // return ((n % 10) * ((int) Math.pow(10, length(n / 10)))) + reverse(n / 10);
-
-    // Without Recursion
-    int num = 0;
-    while (n > 0) {
-      num = (num * 10) + (n % 10);
-      n /= 10;
+    /**
+     * Reverses the digits of an integer.
+     * Uses StringBuilder for string manipulation to achieve reversal.
+     * Time Complexity: O(n), where n is the number of digits in the integer.
+     * Space Complexity: O(n), due to the StringBuilder.
+     * @param n The integer to be reversed.
+     * @return The reversed integer.
+     */
+    public static int reverseANumber(int n) {
+        // Convert the absolute value of the integer to a string and reverse it using StringBuilder.
+        return Integer.parseInt((new StringBuilder(Math.abs(n) + "")).reverse().toString());
     }
-    return num;
-  }
 }
