@@ -1,10 +1,11 @@
 public class BuyAndSellStock {
 
+ 
     /**
      * Calculates the maximum profit that can be obtained by buying and selling a stock once.
      * The algorithm iterates through the prices, keeping track of the minimum price seen so far
      * and the maximum profit that can be obtained by selling at the current price.
-     * Time Complexity: O(n) - single pass through the array
+     * Time Complexity: O(n) - single pass through the price array
      * Space Complexity: O(1) - constant extra space
      * @param arr An array of stock prices.
      * @return The maximum profit that can be obtained.
